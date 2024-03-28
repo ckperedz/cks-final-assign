@@ -1,0 +1,607 @@
+/* ------------------RESET----------------*/
+
+*,
+*::before,
+*::after{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0; 
+  padding: 0; 
+}
+
+/* Variables */
+:root {
+  --blue-primary: #0c3c60;
+  --ice-blue: #d1e0eb;
+  --heading-font-size: 60px; /* Correct variable name */
+}
+
+/* Typography */
+body,
+h1,
+nav ul li a {
+  font-family: 'Raleway', sans-serif;
+}
+
+.brand-name {
+  letter-spacing: 0.05em;
+  font-size: 32px;
+  line-height: normal;
+  text-align: center;
+}
+
+/* ---------------NAVIGATION LINKS----------------*/
+
+nav {
+  list-style-type: none;
+  margin: 0;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+ul {
+  display: flex;
+}
+
+
+a {
+  position: relative;
+  text-decoration: none;
+  color: aliceblue;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+/* ---------------UNDERLINE UNDER NAVIGATION LINKS ANIMATED----------------*/
+
+a::before {
+  content:"";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #7dcada;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 250ms ease-in-out;
+}
+
+/* Hover Effect */
+a:hover::before {
+  visibility: visible;
+  transform: scaleX(100%);
+  font-size: 20px;
+}
+
+
+a:active {
+  color: #7dcada;
+}
+
+
+/* --------------------HEADER----------------------*/
+header {
+  background-color: var(--blue-primary);
+  padding: 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Background Image */
+.background-image {
+  background-image: url('../images/white-mountain.avif');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+
+
+
+
+/* Transparent Box + dis + ag heading */
+
+.transparent-box {
+  background-color: rgba(209, 224, 235, 0.41);
+  position: absolute;
+  text-align: center;
+  bottom: -110px;
+  width: 100%;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+#dis-heading {
+  font-size: 25px; 
+  color: var(--blue-primary);
+  text-transform: capitalize;
+}
+
+/* ------------------ABOUT US --------------------*/
+
+
+.about-us {
+  text-align: center;
+  padding: 15%;
+  
+}
+
+
+.about-us-heading {
+  font-size: var(--heading-font-size); 
+}
+
+.about-us-content {
+  line-height: 30px;
+  padding: 32px;
+  font-size: 16px;
+}
+
+
+
+/* ------THE BOXES: SERVICES,PROJECTS,CLIENTS------*/
+/* ------the boxes animated------*/
+.SPC {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  margin-bottom: 15%;
+}
+
+.box {
+  position: relative;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  background-color: var(--blue-primary);
+  width: 400px;
+  height: 400px;
+  margin: 10px;
+  padding: 20px;
+  overflow: hidden;
+  transition: transform 0.3s, background-color 03s;
+}
+
+.box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  transition: opacity 200ms ease-in-out; 
+}
+
+.box:hover {
+  transform: scale(1.1) ; 
+  background-color: rgb(3, 205, 205);
+  color: #092d49;
+}
+
+.box h2 {
+  color: aliceblue;
+  font-size: xxx-large;
+}
+
+.box:hover h2 {
+  color: #092d49;
+  font-size: 61px;
+  transition: 1s;
+}
+
+
+/* Section Headings */
+
+h3 {
+  font-size: 60px;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--blue-primary);
+}
+
+h2 {
+  color: var(--ice-blue);
+  font-size: 19px;
+  line-height: 29px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+
+/* ------------------THE FOOTERS-------------------*/
+.footer {
+  background-color: var(--blue-primary);
+}
+
+/* CONTACT US */
+#contact-us-heading {
+  text-transform: uppercase;
+  color: aliceblue;
+  text-align: center;
+  padding: 100px;
+}
+
+/* Little Footer */
+.little-footer-container {
+  background-color: #092d49;
+  padding: 38px;
+  text-align: center;
+  color: var(--ice-blue);
+  bottom: 0;
+}
+
+/* map */
+.mapcontainer {
+  margin: 0 auto;
+  width: 80%; 
+}
+
+.mymap {
+  position: relative; 
+  padding-bottom: 42%; 
+  height: 0;
+  overflow: hidden;
+}
+
+.mymap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 93%;
+  border: 0; 
+}
+
+
+
+
+/* Address */
+address {
+  color: white;
+  line-height: 45px;
+  display: inline-block;
+  margin: 20px 0 20px 0;
+  font-size: 1.5em;
+}
+
+address a {
+  text-decoration: none;
+  color: white;
+
+}
+
+address a:hover {
+  color: var(--ice-blue);
+}
+
+/* Form */
+
+.custom-form-name {
+  margin-top: 40px;
+  margin-bottom: 25px;
+  color: white;
+
+}
+/* ---------------------FORM---------------------- */
+
+.form-container {
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: flex;
+  margin-right: -5px;
+  margin-left: -5px;
+}
+
+.col {
+  flex: 1;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.submit-form-container {
+  text-align: center;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.btn {
+  padding: 15px 30px; 
+  justify-content: space-between;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #092d49;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  overflow:auto;
+}
+
+/* ------------------SUBMIT FORM BTN ANIMATE----------------*/
+
+
+.btn:hover {
+  background-color: aqua;
+  color: #092d49;
+  transition: all 800ms ease-in-out;
+  
+} 
+
+.btn:active {
+  background-color: aqua;
+  color: #092d49;
+}
+
+
+
+/* ------------------MEDIA QUERIES----------------*/
+
+/* * Miscellanous Rules */ 
+
+@media (max-width: 1399px) {
+  .box {
+  width: 360px;
+  height: 360px;
+  }
+}
+
+
+/* ----------------------------------------------- */
+/* Rules for Small Laptop */
+@media (max-width: 1024px) {
+  .brand-name {
+    font-size: 15px;
+  }
+
+  nav {
+    margin: -12px; 
+  }
+
+  nav ul li a {
+    font-size: 12px;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  h3 {
+    font-size: 50px;
+  }
+
+  /* Transparent Box */
+  .transparent-box {
+    background-color: rgba(209, 224, 235, 0.41);
+    position: absolute;
+    text-align: center;
+    bottom: 113px;
+    width: 100%;
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  /* About Us */
+  .about-us {
+    padding: 21%;
+  }
+
+  .about-us-heading {
+    font-size: 45px;
+  }
+
+  .about-us-content {
+    line-height: 30px;
+    padding: 24px;
+    font-size: 16px;
+  }
+
+  /* Background Image */
+  .background-image {
+    background-image: url('../images/white-mountain.avif');
+    background-size: cover;
+    background-position: center;
+    height: 77.65vh;
+    width:100%;
+
+  }
+
+  /* The Boxes: SERVICES,PROJECTS,CLIENTS */
+  .SPC {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15%;
+  }
+
+  .box {
+    width: 200px;
+    height: 200px;
+  }
+
+  .box h2 {
+    font-size: x-large;
+  }
+
+  form {
+    line-height: 45px;
+    color: white;
+  }
+
+  address {
+    color: white;
+    line-height: 45px;
+    display: inline-block;
+    margin: 20px 0 20px 0;
+    font-size: 18px;
+  }
+
+  .custom-form-name {
+    font-size: 32px;
+    padding-top: 30px;
+  }
+
+  .form-group {
+    margin-bottom: 0;
+  }
+}
+
+
+/* ----------------------------------------------- */
+/* Rules for Tablet */
+@media (max-width: 768px){
+
+  .background-image {
+    background-size: cover;
+    background-position: center;
+    height: 54.7vh;
+    width: 100%;
+  }
+
+  .transparent-box {
+    background-color: rgba(209, 224, 235, 0.41);
+    position: absolute;
+    text-align: center;
+    bottom: 322px;
+    width: 100%;
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  h4 {
+    font-size: 14px;
+  }
+
+  /* #achieving-growth-heading */
+
+  .box {
+    width: 210px;
+    height: 210px;
+    padding: 0;
+  }
+
+  .about-us {
+    padding: 23%;
+  }
+
+  .about-us-heading {
+    font-size: 40px;
+  }
+
+  .about-us-content {
+    font-size: 14px;
+  }
+
+
+  #contact-us-heading {
+  text-transform: uppercase;
+  color: aliceblue;
+  text-align: center;
+  padding: 100px;
+  }
+
+  .form-group {
+    margin-top: 33px;
+  }
+}
+
+/* ----------------------------------------------- */
+/* Rules for Large Moblie L */
+
+@media (max-width:425px) {
+  .brand-name {
+    margin-left: 9px;
+    /* margin-right: 20px; */
+    font-size: larger;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column 
+
+
+  }
+
+  nav {
+    margin-top: 10px;
+    margin-left: 13px;
+  }
+
+  .transparent-box {
+    background-color: rgba(209, 224, 235, 0.41);
+    position: absolute;
+    text-align: center;
+    bottom: 33.4%;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+
+  h4 {
+    font-size: 12px;
+  }
+
+  .background-image {
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    width: 100%;
+  } 
+
+  .transparent-box {
+    bottom: 48%;
+  }
+
+  .about-us {
+    padding: 14%;
+  }
+
+  .SPC {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40%
+  }
+}
+
+/* Rules for Large Moblie M */
+@media (max-width:375px) {
+ #contact-us-heading {
+  padding: 45px;
+ }
+}
